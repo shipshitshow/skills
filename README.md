@@ -1,6 +1,14 @@
 # Ship Sh!t Show Skills
 
-This repo contains a small `skills.sh` skill pack built around the public [`shipshitshow/vault`](https://github.com/shipshitshow/vault) structure.
+This repo contains a small [`skills.sh`](https://skills.sh) skill pack built around the public [`shipshitshow/vault`](https://github.com/shipshitshow/vault) structure.
+
+## Install
+
+Install directly from GitHub with `npx`:
+
+```bash
+npx skills install shipshitshow/skills
+```
 
 ## Included skills
 
