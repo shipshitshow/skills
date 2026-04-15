@@ -1,9 +1,9 @@
 ---
-name: generating-youtube-metadata
+name: youtube-metadata
 description: Use when the user wants YouTube titles, descriptions, or youtube_tags generated from a Ship Sh!t Show style vault, or when they want topic-fit metadata guided by historical performance instead of generic SEO copy.
 ---
 
-# Generating YouTube Metadata
+# YouTube Metadata
 
 Determine the skill directory from the path of this `SKILL.md` and use that as `$SKILL_DIR` in any commands below.
 
@@ -108,4 +108,3 @@ Return this exact structure:
 - Read [references/vault-input-shape.md](references/vault-input-shape.md) for the vault schema.
 - Read [references/title-patterns-by-channel.md](references/title-patterns-by-channel.md) for proven title families.
 - Read [references/performance-ranking-rules.md](references/performance-ranking-rules.md) before making winner-versus-weak claims.
-

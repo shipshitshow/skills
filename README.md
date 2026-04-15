@@ -12,7 +12,19 @@ npx skills install shipshitshow/skills
 
 ## Included skills
 
-### `generating-youtube-metadata`
+### `talking-points`
+
+Generates:
+
+- livestream talking points
+- long-form video rundowns
+- section-by-section outlines
+- clip callouts
+- source and stats sections
+
+It is tuned to the real Ship Sh!t Show `notes.md` structure from the vault, not generic bullet-list outlines.
+
+### `youtube-metadata`
 
 Generates:
 
@@ -24,7 +36,7 @@ Generates:
 
 It includes a bundled analyzer script that reads a local vault path or falls back to a GitHub repo.
 
-### `generating-thumbnail-prompt-variations`
+### `thumbnail-prompt-variations`
 
 Generates 4-6 thumbnail prompt variants plus one recommended winner, using:
 
@@ -75,13 +87,13 @@ Each skill is publish-ready as its own folder:
 The metadata skill includes a working analyzer:
 
 ```bash
-node ./generating-youtube-metadata/scripts/analyze-vault-performance.js --vault shipshitshow/vault --channel all --format pretty
+node ./youtube-metadata/scripts/analyze-vault-performance.js --vault shipshitshow/vault --channel all --format pretty
 ```
 
 Local vault example:
 
 ```bash
-node ./generating-youtube-metadata/scripts/analyze-vault-performance.js --vault /path/to/vault --channel videos --format json
+node ./youtube-metadata/scripts/analyze-vault-performance.js --vault /path/to/vault --channel videos --format json
 ```
 
 ## Notes

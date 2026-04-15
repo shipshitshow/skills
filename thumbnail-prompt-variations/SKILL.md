@@ -1,9 +1,9 @@
 ---
-name: generating-thumbnail-prompt-variations
+name: thumbnail-prompt-variations
 description: Use when the user wants topic-fit thumbnail prompt variations for Ship Sh!t Show style videos or shorts, especially when they want high-contrast YouTube-friendly prompts grounded in existing vault thumbnails and a pasted creative brief.
 ---
 
-# Generating Thumbnail Prompt Variations
+# Thumbnail Prompt Variations
 
 Determine the skill directory from the path of this `SKILL.md` and use that as `$SKILL_DIR` when referring to bundled references.
 
@@ -90,4 +90,3 @@ Return this exact structure:
 - Read [references/visual-language-from-vault.md](references/visual-language-from-vault.md) first.
 - Read [references/thumbnail-style-families.md](references/thumbnail-style-families.md) to choose the family.
 - Read [references/prompt-output-format.md](references/prompt-output-format.md) to format the final response.
-

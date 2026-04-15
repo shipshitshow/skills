@@ -1,0 +1,6 @@
+interface:
+  display_name: "Generate Talking Points"
+  short_description: "Generate livestream and video talking points"
+  default_prompt: "Use $talking-points to turn this topic, source list, or vault episode into Ship Sh!t Show talking points with sections, clips, and a strong thesis."
+policy:
+  allow_implicit_invocation: true
