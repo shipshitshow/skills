@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tesseract Projects"
+  short_description: "Organize a local Tesseract editing library with source media"
+  default_prompt: "Use $tesseract-projects for this channel and its actual source material."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tesseract Recap"
+  short_description: "Edit a livestream into a focused Tesseract recap with natura"
+  default_prompt: "Use $tesseract-recap for this channel and its actual source material."

@@ -1,6 +1,4 @@
 interface:
-  display_name: "Generate Thumbnail Prompt Variations"
-  short_description: "Create topic-fit thumbnail prompt variants"
-  default_prompt: "Use $thumbnail-prompt-variations to create 4-6 high-contrast thumbnail prompt variations from this Ship Sh!t Show episode or creative brief."
-policy:
-  allow_implicit_invocation: true
+  display_name: "Thumbnail Prompt Variations"
+  short_description: "Three truthful thumbnail test hypotheses"
+  default_prompt: "Use $thumbnail-prompt-variations for this channel and its actual source material."

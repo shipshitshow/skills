@@ -1,46 +1,7 @@
-# Prompt Output Format
+# Thumbnail set
 
-Each variation should use this exact shape:
+For A, B and C, include hypothesis, viewer inference, reference assets, composition, crop, palette, optional exact text, complete prompt, exclusions and small-size checks. Supply exactly three candidates. Recommend a first/default option; avoid claiming a winner before results.
 
-```text
-VARIANT N - <short codename>
+Compare concepts against the same truthful video promise. Keep title fixed for a thumbnail-only test. For combined tests label title/thumbnail pairs. Preserve identity and respect surgical edit requests.
 
-SCENE: ...
-
-SUBJECT LEFT (far left): ...
-
-SUBJECT RIGHT (far right): ...
-
-CENTER OF FRAME (large): ...
-
-BACKGROUND: ...
-
-LIGHTING: ...
-
-STYLE: ...
-
-NEGATIVE PROMPT: ...
-
-WHY IT WORKS AT 120PX: ...
-```
-
-## Output rules
-
-- Keep each field concrete.
-- Keep the center object oversized.
-- Explain expression, gesture, and lighting, not just nouns.
-- The `WHY IT WORKS AT 120PX` note should be one tight sentence.
-- The recommended winner should name the best variant and why it beats the others.
-
-## Default negative prompt language
-
-Reuse and adapt this baseline unless the user says otherwise:
-
-- no text
-- no words
-- no branding
-- no watermarks
-- no letters
-- no numbers
-- dark background only
-
+Record test date, eligible asset, fixed/changed variables and YouTube's actual result. An inconclusive test is inconclusive; do not convert a tiny CTR movement into a win. Shorts use frame/cover selection instead of native three-candidate testing.
