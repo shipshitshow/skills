@@ -32,4 +32,4 @@ The metadata analyzer supports `--channel livestreams|videos|shorts|all` and a l
 node youtube-metadata/scripts/analyze-vault-performance.js --vault /path/to/vault --channel all --format pretty
 ```
 
-Public episodes/transcripts: https://github.com/shipshitshow/vault. Public demonstration code: https://github.com/shipshitshow/examples. Producer: https://send.shipshit.dev; show: https://show.shipshit.dev.
+Public episodes/transcripts: https://github.com/shipshitshow/vault. Public demonstration code: https://github.com/shipshitshow/examples. Producer Home: https://show.shipshit.dev/studio; sign-in: https://show.shipshit.dev/sign-in; public show: https://show.shipshit.dev.
