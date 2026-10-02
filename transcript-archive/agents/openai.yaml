@@ -1,0 +1,4 @@
+interface:
+  display_name: "Transcript Archive"
+  short_description: "Archive livestream, edited-video and Short transcripts with "
+  default_prompt: "Use $transcript-archive for this channel and its actual source material."

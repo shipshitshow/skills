@@ -1,149 +1,30 @@
 ---
 name: talking-points
-description: Use when the user wants livestream, long-form video, or shorts talking points in the Ship Sh!t Show style, especially when they have source links, rough ideas, or topic notes and want them turned into structured sections, hooks, clips, stats, and distribution ideas.
+description: Prepare a livestream source board and run of show for hosts who discuss links naturally instead of reading scripts.
 ---
 
-# Talking Points
+# Source-led show preparation
 
-Determine the skill directory from the path of this `SKILL.md` and use that as `$SKILL_DIR` when reading bundled references.
+Create a show the hosts can navigate while speaking in their own words. Keep the existing skill name for compatibility.
 
-This skill turns raw research, source links, notes, or a rough thesis into Ship Sh!t Show style talking points.
+## Channel context
 
-## Inputs
+Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
-Use any combination of:
+## Prepare
 
-- `vault_path`
-- `vault_repo_url`
-- `episode_path`
-- a pasted topic brief
-- source links
-- transcripts
-- trend research
-- target runtime
-- format constraint:
-  - livestream
-  - long-form video
-  - short
+Start from the viewer question and the hosts' actual experience. Review the latest relevant transcript if available. Select a small set of source clusters; locate the useful tweet, passage, timestamp or result before the show. Prefer primary evidence alongside X discussion. Mark unverified claims and do not fill gaps with invented experiences.
 
-If the user provides a real episode path from the vault, read `notes.md` first when present. Otherwise read `overview.md`, then `description.md`, then `transcript.md` as supporting context.
+Order the show by the decision the viewer needs to make. Put the main proof early; use release chronology only where it explains that decision. Prepare a question, sources, host challenge, consequence, rough time budget and exit cue for each segment. Capture tangents separately. Preserve room for disagreement and chat without letting every tangent become a new segment.
 
-## What This Skill Produces
+If a demo is requested, verify quota/account, fixture, expected result and a short recovery path. Prepare an authorized recorded/local fallback when live usage is unreliable. Mark the slot unavailable if neither exists; do not promise it or purchase capacity silently.
 
-Use this skill to generate:
+Use [the source-board template](references/output-template.md). Return short cues and navigable links, not an opening monologue, quotes to perform, mandatory clip lines or a forced publishable build. An opening cue states the viewer promise in the host's words. An exit cue helps move on without scripting a conclusion the evidence does not support.
 
-- livestream rundown notes
-- long-form video talking points
-- segment-by-segment outlines
-- intro hooks
-- clip callouts
-- conclusion beats
-- source and stat sections
-- distribution notes
+For an app topic file, preserve its frontmatter and use `## Sources — <segment>` with `###` subheadings. Confirm the target renderer's section rules; avoid nesting `##` inside a segment. Use a separate complete run-of-show note when the app stores one file per topic.
 
-## Core Rule
+## Review
 
-Do not generate bland bullet lists.
+Can each host find the next source immediately? Does the first segment deliver the title's promise? Is the demo executable? Are opinions and evidence distinguishable? Does the ending answer the viewer question or clearly state what remains unknown?
 
-Your output should feel like a real Ship Sh!t Show show plan:
-
-- a hard open
-- clear sections
-- a strong thesis
-- fair setup, then sharper take
-- clip-worthy lines called out explicitly
-- concrete examples and stats
-
-## Workflow
-
-1. Ground in the house style.
-   - Read [references/vault-talking-points-shape.md](references/vault-talking-points-shape.md).
-   - Read [references/section-and-clip-patterns.md](references/section-and-clip-patterns.md).
-
-2. Resolve the content mode.
-   - `livestream` should be the most detailed and segment-driven.
-   - `long-form video` should be tighter and less rundown-heavy.
-   - `short` should be hook-first and payoff-fast.
-
-3. Identify the argument.
-   - What is the claim?
-   - What is the conflict?
-   - What changed this week?
-   - Why should a developer, builder, or founder care?
-
-4. Build the structure.
-   - Intro with a direct thesis and stakes.
-   - 3-5 main sections.
-   - Conclusion with the punchline.
-   - Sources, stats, clips, and distribution when useful.
-
-5. Make it clip-aware.
-   - Mark standout moments with `✂️ CLIP`.
-   - Every major section should contain at least one line that could survive as a short or social cut.
-
-6. Use real evidence.
-   - If the user provided links or stats, anchor the outline to them.
-   - If evidence is thin, say so and avoid fake certainty.
-
-## Output Contract
-
-Return one structured plan using this shape:
-
-### Title
-
-- one working title for the segment or stream
-
-### Format
-
-- livestream, long-form video, or short
-
-### Core Thesis
-
-- one short paragraph
-
-### Rundown
-
-- `INTRO`
-- `SECTION 1`
-- `SECTION 2`
-- additional sections as needed
-- `CONCLUSION`
-
-Each section should include:
-
-- time estimate when relevant
-- what to say
-- what to show
-- the strongest argument or example
-
-### Clips
-
-- explicit `✂️ CLIP` callouts with rough duration and hook line
-
-### Sources
-
-- flat list of links or references
-
-### Key Stats
-
-- flat list, only when relevant
-
-### Distribution
-
-- only when useful
-- note likely cuts, short ideas, or platform angle
-
-## Guardrails
-
-- Do not sound like a corporate script.
-- Do not pad with generic filler like `engage the audience here`.
-- Do not write fake timestamps or fake stats.
-- If the source material is weak, keep the structure but state the uncertainty.
-- If the topic is conflict-heavy, be fair first, then make the stronger argument.
-- If the format is a short, compress the output hard and prioritize hook, turn, and payoff.
-
-## Reading Order
-
-- Read [references/vault-talking-points-shape.md](references/vault-talking-points-shape.md) first.
-- Read [references/section-and-clip-patterns.md](references/section-and-clip-patterns.md) second.
-- Read [references/output-template.md](references/output-template.md) before formatting the final result.
+After the show, record actual segment timing, confusing transitions and demo outcomes. Compare retention for similar formats before attributing performance to an editorial change.

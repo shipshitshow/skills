@@ -1,0 +1,4 @@
+interface:
+  display_name: "Youtube Channel Branding"
+  short_description: "Generate or brief a coordinated YouTube profile picture and "
+  default_prompt: "Use $youtube-channel-branding for this channel and its actual source material."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Partner Ad Script"
+  short_description: "Draft a natural podcast or livestream partner read with supp"
+  default_prompt: "Use $partner-ad-script for this channel and its actual source material."

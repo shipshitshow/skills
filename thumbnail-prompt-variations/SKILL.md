@@ -1,92 +1,20 @@
 ---
 name: thumbnail-prompt-variations
-description: Use when the user wants topic-fit thumbnail prompt variations for Ship Sh!t Show style videos or shorts, especially when they want high-contrast YouTube-friendly prompts grounded in existing vault thumbnails and a pasted creative brief.
+description: Create exactly three YouTube thumbnail test concepts and generation prompts grounded in the actual video and channel identity.
 ---
 
-# Thumbnail Prompt Variations
+# Three thumbnail test variants
 
-Determine the skill directory from the path of this `SKILL.md` and use that as `$SKILL_DIR` when referring to bundled references.
+## Channel context
 
-This skill generates multiple thumbnail prompts from a Ship Sh!t Show style vault episode, a pasted prompt brief, or both.
+Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
-## Inputs
+Determine live, edited recap or Short, the delivered thesis, supplied identity/brand references and whether the user wants new concepts or a surgical edit. For a surgical edit, preserve all unrequested elements; do not redesign the asset to satisfy default style.
 
-Use any combination of:
+For a new test set, return **exactly three** distinct hypotheses. Examples: decisive outcome, firsthand workflow proof, and meaningful tradeoff. Distinguish them enough to learn something while preserving the same truthful viewer promise. Do not label a prompt a proven winner. If testing thumbnails alone, hold the title fixed; if the user chooses combined tests, label each title/thumbnail pair explicitly.
 
-- `vault_path`
-- `vault_repo_url`
-- `episode_path`
-- `thumbnail.png`
-- `thumbnail.md`
-- a pasted prompt brief
-- transcript excerpts
-- explicit reset instructions such as `ignore the existing thumbnail`
+Each variant includes: hypothesis; intended viewer inference; composition/crop; identity references; restrained palette; optional short text with exact spelling; complete generation prompt; exclusions; small-size review; and suggested first/default candidate if the test is inconclusive. Use real proof or a clearly illustrative metaphor rather than fabricating a product screenshot, endorsement or benchmark.
 
-## Workflow
+Inspect the current asset and host references before edits. Use the available image tool for actual generation, preserving transparency when requested. For motion or editable composites use an appropriate installed tool/plugin. A prompt-only request does not authorize spending on generation or publishing to YouTube.
 
-1. Resolve the episode context.
-   - If an `episode_path` is provided, read `overview.md`, `description.md`, and `thumbnail.md`.
-   - If `thumbnail.png` exists and your environment supports image inspection, inspect it before generating new prompts.
-   - If image inspection is not available, use `thumbnail.md` plus `overview.md` as the fallback visual context.
-
-2. Read the pasted brief carefully.
-   - Treat the user's prompt language as a style signal, not just raw content.
-   - Preserve concrete subject details when the user gave them deliberately.
-
-3. Choose the style family before writing prompts.
-   - Use [references/thumbnail-style-families.md](references/thumbnail-style-families.md).
-   - The style can vary by topic.
-   - The global constraints do not vary:
-     - high contrast
-     - dark background or dark edge treatment
-     - one dominant center object
-     - hosts readable on outer edges
-     - one emotional read at 120px
-
-4. Preserve channel DNA unless the user asks for a reset.
-   - Existing vault thumbnails strongly favor:
-     - expressive hosts on the left and right edges
-     - large symbolic object in the center
-     - hot orange-red or blue light as the main narrative device
-     - uncluttered composition
-
-5. Generate 4-6 prompt variations plus one recommended winner.
-   - Each variation must follow the output format reference exactly.
-   - Do not paraphrase the same prompt six times.
-   - Push each variation into a different visual angle, emotion, or symbol set.
-
-## Output Contract
-
-Return this exact structure:
-
-### Recommended Winner
-
-- Name the best variant and explain why it will read best at thumbnail size.
-
-### Prompt Variations
-
-- 4-6 variations.
-- Each variation must include:
-  - `SCENE`
-  - `SUBJECT LEFT`
-  - `SUBJECT RIGHT`
-  - `CENTER OF FRAME`
-  - `BACKGROUND`
-  - `LIGHTING`
-  - `STYLE`
-  - `NEGATIVE PROMPT`
-  - `WHY IT WORKS AT 120PX`
-
-## Guardrails
-
-- Do not add text overlays unless the user explicitly asks for them.
-- Default to dark backgrounds and high contrast.
-- Avoid clutter, small props, busy multi-object scenes, or thin detail that dies at small size.
-- If the topic is abstract, convert it into one concrete center object.
-- If an existing thumbnail already contains a strong recurring composition trait, keep it unless the user asked for a reset.
-
-## Reading Order
-
-- Read [references/visual-language-from-vault.md](references/visual-language-from-vault.md) first.
-- Read [references/thumbnail-style-families.md](references/thumbnail-style-families.md) to choose the family.
-- Read [references/prompt-output-format.md](references/prompt-output-format.md) to format the final response.
+Read [the prompt and testing contract](references/prompt-output-format.md). YouTube's current testing supports up to three candidates on eligible long-form uploads/completed live archives, not Shorts or scheduled live streams; watch time, not CTR alone, determines its result. Recheck [current eligibility and specifications](https://support.google.com/youtube/answer/16391400?hl=en). Keep Shorts cover/frame selection as a separate workflow without promising native A/B support.

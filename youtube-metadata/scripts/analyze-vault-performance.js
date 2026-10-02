@@ -29,7 +29,7 @@ function parseArgs(argv) {
 function usage() {
   console.log(
     [
-      "Usage: analyze-vault-performance.js [--vault <path|repo|url>] [--channel videos|shorts|all] [--format json|pretty] [--top N]",
+      "Usage: analyze-vault-performance.js [--vault <path|repo|url>] [--channel livestreams|videos|shorts|all] [--format json|pretty] [--top N]",
       "",
       "Examples:",
       "  node analyze-vault-performance.js --vault /path/to/vault --channel videos --format pretty",
@@ -193,41 +193,25 @@ function classifyTitlePatterns(title) {
 }
 
 function collectEntries(root, channelKey) {
+  const base = channelKey === "shorts"
+    ? path.join(root, "shipshitshowclips", "Shorts")
+    : path.join(root, "shipshitshow", channelKey === "livestreams" ? "Livestreams" : "Videos");
   const entries = [];
-
-  if (channelKey === "videos") {
-    const base = path.join(root, "shipshitshow", "Videos");
-    if (!fs.existsSync(base)) {
-      return entries;
+  function visit(dir) {
+    if (!fs.existsSync(dir)) return;
+    if (fs.existsSync(path.join(dir, "overview.md"))) {
+      const entry = loadEntry(root, dir, channelKey);
+      if (entry) entries.push(entry);
+      return;
     }
-    for (const entry of fs.readdirSync(base, { withFileTypes: true })) {
-      if (!entry.isDirectory() || entry.name.startsWith("_")) {
-        continue;
+    for (const child of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (child.isDirectory() && !child.name.startsWith("_") && !child.name.startsWith(".")) {
+        visit(path.join(dir, child.name));
       }
-      entries.push(loadEntry(root, path.join(base, entry.name), "videos"));
-    }
-    return entries.filter(Boolean);
-  }
-
-  const base = path.join(root, "shipshitshowclips", "Shorts");
-  if (!fs.existsSync(base)) {
-    return entries;
-  }
-
-  for (const dateDir of fs.readdirSync(base, { withFileTypes: true })) {
-    if (!dateDir.isDirectory() || dateDir.name.startsWith("_")) {
-      continue;
-    }
-    const datePath = path.join(base, dateDir.name);
-    for (const variantDir of fs.readdirSync(datePath, { withFileTypes: true })) {
-      if (!variantDir.isDirectory()) {
-        continue;
-      }
-      entries.push(loadEntry(root, path.join(datePath, variantDir.name), "shorts"));
     }
   }
-
-  return entries.filter(Boolean);
+  visit(base);
+  return entries;
 }
 
 function loadEntry(root, dirPath, format) {
@@ -239,7 +223,8 @@ function loadEntry(root, dirPath, format) {
   const overview = fs.readFileSync(overviewPath, "utf8");
   const frontmatter = parseFrontmatter(overview);
   const title = frontmatter.title || path.basename(dirPath);
-  const views = Number(frontmatter.view_count || 0);
+  const parsedViews = Number(frontmatter.view_count);
+  const views = frontmatter.view_count !== undefined && Number.isFinite(parsedViews) && parsedViews >= 0 ? parsedViews : null;
   const youtubeTags = Array.isArray(frontmatter.youtube_tags) ? frontmatter.youtube_tags : [];
 
   return {
@@ -258,72 +243,27 @@ function loadEntry(root, dirPath, format) {
   };
 }
 
-function topWords(entries, count) {
-  const scores = new Map();
-  for (const entry of entries) {
-    for (const token of entry.titleTokens) {
-      scores.set(token, (scores.get(token) || 0) + entry.views);
-    }
-  }
-  return [...scores.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, count)
-    .map(([word, score]) => ({ word, weightedViews: score }));
-}
-
-function topTags(entries, count) {
-  const scores = new Map();
-  for (const entry of entries) {
-    for (const tag of entry.youtubeTags) {
-      const key = tag.toLowerCase();
-      const current = scores.get(key) || { tag, occurrences: 0, weightedViews: 0 };
-      current.occurrences += 1;
-      current.weightedViews += entry.views;
-      scores.set(key, current);
-    }
-  }
-  return [...scores.values()]
-    .sort((a, b) => b.weightedViews - a.weightedViews)
-    .slice(0, count);
-}
-
 function summarizeChannel(entries, topN) {
-  const sorted = [...entries].sort((a, b) => b.views - a.views);
-  const total = sorted.length;
-  const third = Math.max(1, Math.ceil(total / 3));
-  const winnerSet = sorted.slice(0, third);
-  const weakSet = sorted.slice(Math.max(0, total - third));
-  const middleStart = Math.max(0, Math.floor((total - third) / 2));
-  const medianSet = sorted.slice(middleStart, middleStart + third);
-  const patternScores = new Map();
-
-  for (const entry of winnerSet) {
-    for (const pattern of entry.patterns) {
-      patternScores.set(pattern, (patternScores.get(pattern) || 0) + entry.views);
+  const observed = entries.filter((entry) => entry.views !== null);
+  const viewValues = observed.map((entry) => entry.views).sort((a, b) => a - b);
+  const count = viewValues.length;
+  const patterns = new Map();
+  const tags = new Map();
+  for (const entry of entries) {
+    for (const pattern of entry.patterns) patterns.set(pattern, (patterns.get(pattern) || 0) + 1);
+    for (const tag of new Set(entry.youtubeTags.map((value) => value.toLowerCase()))) {
+      tags.set(tag, (tags.get(tag) || 0) + 1);
     }
   }
-
-  const viewValues = sorted.map((entry) => entry.views);
-  const averageViews = total === 0 ? 0 : viewValues.reduce((sum, value) => sum + value, 0) / total;
-  const medianViews =
-    total === 0
-      ? 0
-      : total % 2 === 1
-        ? viewValues[Math.floor(total / 2)]
-        : (viewValues[total / 2 - 1] + viewValues[total / 2]) / 2;
-
   return {
-    count: total,
-    averageViews: Number(averageViews.toFixed(1)),
-    medianViews,
-    winners: winnerSet.slice(0, topN).map(trimEntry),
-    median: medianSet.slice(0, topN).map(trimEntry),
-    weak: weakSet.slice(0, topN).map(trimEntry),
-    weightedTags: topTags(sorted, 10),
-    weightedTitleWords: topWords(winnerSet, 10),
-    winnerPatterns: [...patternScores.entries()]
-      .sort((a, b) => b[1] - a[1])
-      .map(([pattern, weightedViews]) => ({ pattern, weightedViews })),
+    count: entries.length,
+    entriesWithViewSnapshot: count,
+    averageViews: count ? Number((viewValues.reduce((a, b) => a + b, 0) / count).toFixed(1)) : null,
+    medianViews: count ? count % 2 ? viewValues[Math.floor(count / 2)] : (viewValues[count / 2 - 1] + viewValues[count / 2]) / 2 : null,
+    recentExamples: [...entries].sort((a, b) => b.date.localeCompare(a.date)).slice(0, topN).map(trimEntry),
+    mostViewedSnapshots: [...observed].sort((a, b) => b.views - a.views).slice(0, topN).map(trimEntry),
+    titlePatternOccurrences: [...patterns].sort((a, b) => b[1] - a[1]).map(([pattern, occurrences]) => ({ pattern, occurrences })),
+    tagOccurrences: [...tags].sort((a, b) => b[1] - a[1]).slice(0, 10).map(([tag, occurrences]) => ({ tag, occurrences })),
   };
 }
 
@@ -339,52 +279,15 @@ function trimEntry(entry) {
 }
 
 function renderPretty(report, requestedChannels) {
-  const lines = [];
-  lines.push(`# Vault Performance Report`);
-  lines.push("");
-  lines.push(`- source: ${report.source.kind}${report.source.repo ? ` (${report.source.repo})` : ""}`);
-  lines.push(`- root: ${report.source.root}`);
-  lines.push(`- channels: ${requestedChannels.join(", ")}`);
-  lines.push("");
-
+  const lines = ["# Vault Channel Snapshot", "", report.interpretation, ""];
   for (const channel of requestedChannels) {
     const summary = report.channels[channel];
-    if (!summary) {
-      continue;
-    }
-    lines.push(`## ${channel}`);
-    lines.push("");
-    lines.push(`- count: ${summary.count}`);
-    lines.push(`- average views: ${summary.averageViews}`);
-    lines.push(`- median views: ${summary.medianViews}`);
-    lines.push("");
-    lines.push(`### winners`);
-    for (const item of summary.winners) {
-      lines.push(`- ${item.views} - ${item.title}`);
-    }
-    lines.push("");
-    lines.push(`### median`);
-    for (const item of summary.median) {
-      lines.push(`- ${item.views} - ${item.title}`);
-    }
-    lines.push("");
-    lines.push(`### weak`);
-    for (const item of summary.weak) {
-      lines.push(`- ${item.views} - ${item.title}`);
-    }
-    lines.push("");
-    lines.push(`### winner patterns`);
-    for (const item of summary.winnerPatterns.slice(0, 8)) {
-      lines.push(`- ${item.pattern}: ${item.weightedViews}`);
-    }
-    lines.push("");
-    lines.push(`### weighted tags`);
-    for (const item of summary.weightedTags.slice(0, 8)) {
-      lines.push(`- ${item.tag}: ${item.weightedViews} weighted views across ${item.occurrences} entries`);
-    }
+    lines.push(`## ${channel}`, "", `- entries: ${summary.count}`, `- entries with view snapshots: ${summary.entriesWithViewSnapshot}`, "", "### Recent examples");
+    for (const item of summary.recentExamples) lines.push(`- ${item.date}: ${item.title} (${item.views === null ? "views unknown" : item.views + " snapshot views"})`);
+    lines.push("", "### Descriptive title patterns");
+    for (const item of summary.titlePatternOccurrences) lines.push(`- ${item.pattern}: ${item.occurrences} entries`);
     lines.push("");
   }
-
   return lines.join("\n");
 }
 
@@ -395,12 +298,16 @@ function main() {
     process.exit(0);
   }
 
+  if (!["livestreams", "videos", "shorts", "all"].includes(args.channel)) throw new Error("Invalid --channel");
+  if (!["json", "pretty"].includes(args.format)) throw new Error("Invalid --format");
+  if (!Number.isInteger(args.top) || args.top < 1) throw new Error("--top must be a positive integer");
   const source = resolveVaultRoot(args.vault);
   const requestedChannels =
-    args.channel === "all" ? ["videos", "shorts"] : args.channel === "videos" ? ["videos"] : ["shorts"];
+    args.channel === "all" ? ["livestreams", "videos", "shorts"] : [args.channel];
 
   try {
     const report = {
+      interpretation: "Descriptive archive snapshots only. Upload ages, view observation dates, impressions, CTR, retention and traffic are not normalized; no causal winners or failures can be inferred.",
       source: {
         kind: source.kind,
         root: source.root,

@@ -1,6 +1,4 @@
 interface:
-  display_name: "Generate YouTube Metadata"
-  short_description: "Generate YouTube titles, descriptions, and tags"
-  default_prompt: "Use $youtube-metadata to generate a title pack, description, and youtube_tags from this Ship Sh!t Show topic or vault episode."
-policy:
-  allow_implicit_invocation: true
+  display_name: "Youtube Metadata"
+  short_description: "Draft transcript-grounded YouTube titles, descriptions, chap"
+  default_prompt: "Use $youtube-metadata for this channel and its actual source material."

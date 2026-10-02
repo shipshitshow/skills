@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tesseract Dialogue"
+  short_description: "Improve dialogue in Tesseract edits with recording-specific "
+  default_prompt: "Use $tesseract-dialogue for this channel and its actual source material."

@@ -1,73 +1,31 @@
-# Output Template
+# Source board template
 
-Use this exact structure when generating a full talking-points plan:
+Preserve supplied topic frontmatter. Fill only sections useful to this episode; rough timings are flexible cues.
 
-```text
-# <working title>
+## Sources — Viewer decision
 
-Format: <livestream | long-form video | short>
+### Question and opening cue
 
-Core Thesis:
-<short paragraph>
+What does the viewer need to decide? What preliminary answer can the hosts support?
 
----
+### Evidence to open
 
-## INTRO — <section label> (<time if relevant>)
+- Primary source: [useful passage](https://example.com) — event date, exact fact, uncertainty.
+- X discussion: direct tweet link — question or disagreement, not a substitute for proof.
+- Firsthand example: actual result and what was not checked.
 
-<main talking points>
+### Conversation cues
 
-✂️ CLIP 1: <hook> (<duration>)
+- Host challenge or competing interpretation.
+- Viewer consequence and practical choice.
+- Rough budget and exit cue.
 
----
+## Sources — Demo
 
-## SECTION 1 — <section label> (<time if relevant>)
+Fixture, quota/readiness, expected proof, short recovery path and recorded/local fallback. Omit an unavailable demo promise.
 
-<main talking points>
+## Sources — Close and parking lot
 
-✂️ CLIP 2: <hook> (<duration>)
+Answer the viewer question; name unresolved limits. Park tangents here rather than silently growing the show.
 
----
-
-## SECTION 2 — <section label> (<time if relevant>)
-
-<main talking points>
-
----
-
-## CONCLUSION (<time if relevant>)
-
-<closing beats>
-
----
-
-## Sources
-
-- <source 1>
-- <source 2>
-
-## Key Stats
-
-- <stat 1>
-- <stat 2>
-
-## Clips
-
-1. <clip summary>
-2. <clip summary>
-
-## Distribution
-
-- <distribution note>
-```
-
-## Short-format compression
-
-If the requested format is `short`, compress the shape to:
-
-- hook
-- turn
-- payoff
-- one clip line
-
-Skip long section scaffolding when it would just add noise.
-
+For multiple app topic files, keep the full run of show in a separate note and each cluster in its own topic file. Use `###` inside a section so `##` remains an app section boundary.

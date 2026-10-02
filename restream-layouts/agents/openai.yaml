@@ -1,0 +1,4 @@
+interface:
+  display_name: "Restream Layouts"
+  short_description: "Plan and create Restream camera, discussion, screen-demo and"
+  default_prompt: "Use $restream-layouts for this channel and its actual source material."
