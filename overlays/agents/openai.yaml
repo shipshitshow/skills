@@ -1,4 +1,4 @@
 interface:
-  display_name: "Tesseract Overlays"
+  display_name: "Overlays"
   short_description: "Add AI-illustrated overlays and motion to a plain video"
-  default_prompt: "Use $tesseract-overlays for this channel and its actual source material."
+  default_prompt: "Use $overlays for this channel and its actual source material."

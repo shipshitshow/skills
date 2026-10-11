@@ -16,12 +16,14 @@ Install with your agent's skill installer from `shipshitshow/skills`, or copy th
 | `restream-layouts` | Scene map and usable broadcast graphics |
 | `partner-ad-script` | Supported, disclosed host-read partner script |
 | `transcript-archive` | Provenance, separate clocks and coverage ledger |
-| `tesseract-projects` | Local project folders, versions and final handoff |
-| `tesseract-recap` | Focused edit, cuts and final-timeline packaging |
-| `tesseract-dialogue` | Recording-specific audio treatment and review |
-| `tesseract-overlays` | Asset-sheet illustrations, motion graphics and overlays on a plain recording |
+| `library` | Local edit folders, versions and final handoff |
+| `recap` | Focused edit, cuts and final-timeline packaging |
+| `dialogue` | Recording-specific audio treatment and review |
+| `overlays` | Asset-sheet illustrations, motion graphics and overlays on a plain recording |
 
-These skills support the installed Tesseract plugin for editing. They do not require a viewer to use Vincent's folders or copy the plugin's changing API schema. A brief does not imply publication, paid generation, media upload or partner outreach.
+The four editing skills (`library`, `recap`, `dialogue`, `overlays`) are editor-neutral workflow rules. Each names its current editor, Tesseract, in a short closing section. They do not require a viewer to use Vincent's folders or copy the editor's changing API schema. A brief does not imply publication, paid generation, media upload or partner outreach.
+
+Three of these were first published on 2 Oct 2026 as `tesseract-projects` (now `library`), `tesseract-recap` (now `recap`) and `tesseract-dialogue` (now `dialogue`). An existing install of an old name needs reinstalling under the new one.
 
 ## Channel context and maintenance
 
