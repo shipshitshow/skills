@@ -19,6 +19,7 @@ Install with your agent's skill installer from `shipshitshow/skills`, or copy th
 | `tesseract-projects` | Local project folders, versions and final handoff |
 | `tesseract-recap` | Focused edit, cuts and final-timeline packaging |
 | `tesseract-dialogue` | Recording-specific audio treatment and review |
+| `tesseract-overlays` | Asset-sheet illustrations, motion graphics and overlays on a plain recording |
 
 These skills support the installed Tesseract plugin for editing. They do not require a viewer to use Vincent's folders or copy the plugin's changing API schema. A brief does not imply publication, paid generation, media upload or partner outreach.
 
