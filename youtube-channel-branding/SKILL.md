@@ -9,6 +9,8 @@ description: Generate or brief a coordinated YouTube profile picture and banner 
 
 Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
+For the bundled show, read the canonical brand kit and inventory linked in the profile. The working logo and presentation boards have different statuses; do not mistake a board's cover/banner composition for a correctly sized, approved export.
+
 Read supplied brand direction and inspect current assets/identity references. Resolve only missing consequential choices: represented person/show, exact name, existing logo, imagery rights and intended visual direction. Honor the latest approved direction instead of reopening a settled style.
 
 Design the PFP and banner as related assets with different jobs. PFP: simple recognizable silhouette/mark or supplied portrait, legible in a tiny circular crop. Banner: responsive composition with exact text/logo inside the current safe area. Do not squeeze a full poster into the PFP. Do not invent hosts or transform their identity unless requested.
