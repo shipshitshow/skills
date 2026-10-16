@@ -24,6 +24,13 @@ for entry in sorted(root.glob('*/SKILL.md')):
     ui = yaml.safe_load((entry.parent / 'agents/openai.yaml').read_text())['interface']
     if '$' + entry.parent.name not in ui.get('default_prompt', ''):
         errors.append(f'{entry}: default_prompt missing skill name')
+profile = (root / 'profiles/shipshitshow.md').read_text()
+for obsolete in ('**`SH*W`**', 'small upper-right', '#FF2D20', '#ff2d20'):
+    if obsolete in profile:
+        errors.append(f'Canonical profile contains obsolete branding: {obsolete}')
+for required in ('six-arm asterisk', 'Think AI', 'bottom-right', '#E83B3B', 'x1136/y576'):
+    if required not in profile:
+        errors.append(f'Canonical profile is missing the approved brand rule: {required}')
 if errors:
     raise SystemExit('\n'.join(errors))
 print('Validated skill metadata and local references.')

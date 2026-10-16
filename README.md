@@ -29,7 +29,7 @@ Three of these were first published on 2 Oct 2026 as `tesseract-projects` (now `
 
 [Canonical Ship Sh!t Show profile](profiles/shipshitshow.md). Bundled copies are synchronized by `python3 scripts/sync-profiles.py`; `--check` reports drift. Update the canonical profile first. Descriptive historical channel patterns are not performance guarantees.
 
-[The vault brand kit](https://github.com/shipshitshow/vault/tree/master/brand) owns the show's identity, tokens, asset inventory, layout boards and thumbnail/editing rules. Read the relevant guide and asset status before producing branded media. `SH*W` is the compact mark; **Ship Sh!t Show** remains the full name. Reference boards are not approved upload assets or actual episode footage. Update the vault first, then the canonical profile and its bundled copies. Other channels keep their own identity.
+[The vault brand kit](https://github.com/shipshitshow/vault/tree/master/brand) owns the show's identity, tokens, asset inventory, layout boards and thumbnail/editing rules. Read the relevant guide and asset status before producing branded media. The standalone six-arm asterisk is the compact mark; **Ship Sh!t Show** remains the full name. Reference boards are not approved upload assets or actual episode footage. Update the vault first, then the canonical profile and its bundled copies. Other channels keep their own identity.
 
 The metadata analyzer supports `--channel livestreams|videos|shorts|all` and a local vault or public GitHub repository:
 
