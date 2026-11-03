@@ -7,7 +7,7 @@ description: Research current stories that fit a channel audience and turn prima
 
 ## Channel context
 
-Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
+Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
 Start with the audience decision, publication date and hosts' experience. Browse current primary sources for releases, pricing, benchmarks and policy claims; use X and other communities to surface useful questions and disagreement. Search platforms because they add evidence, not because every brief must contain Reddit, Hacker News, YouTube and X.
 

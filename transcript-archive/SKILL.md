@@ -7,7 +7,7 @@ description: Archive livestream, edited-video and Short transcripts with provena
 
 ## Channel context
 
-Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
+Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
 Inventory by channel ID and YouTube ID, union existing history with current uploads, and deduplicate before writing. A public tab is a lower bound: absence does not prove deletion/private status. Keep existing episode links working. Reconcile both main and Clips channels.
 
