@@ -25,10 +25,10 @@ for entry in sorted(root.glob('*/SKILL.md')):
     if '$' + entry.parent.name not in ui.get('default_prompt', ''):
         errors.append(f'{entry}: default_prompt missing skill name')
 profile = (root / 'profiles/shipshitshow.md').read_text()
-for obsolete in ('**`SH*W`**', 'small upper-right', '#FF2D20', '#ff2d20'):
+for obsolete in ('**`SH*W`**', 'small upper-right', 'x1136/y576', 'always **bottom-right**', '#FF2D20', '#ff2d20'):
     if obsolete in profile:
         errors.append(f'Canonical profile contains obsolete branding: {obsolete}')
-for required in ('six-arm asterisk', 'Think AI', 'bottom-right', '#E83B3B', 'x1136/y576'):
+for required in ('six-arm asterisk', 'Think AI', '**top-right**', '#E83B3B', 'x1120/y64', 'x768/y320', '64px top/right', '320px top, 216px right'):
     if required not in profile:
         errors.append(f'Canonical profile is missing the approved brand rule: {required}')
 if errors:
