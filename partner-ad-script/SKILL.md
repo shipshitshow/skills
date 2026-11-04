@@ -7,7 +7,7 @@ description: Draft a natural podcast or livestream partner read with supported c
 
 ## Channel context
 
-Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
+Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
 Use the partner brief: product/offer, intended audience, relationship, approved facts, evidence, actual host experience, CTA/link, requested length and placement. Ask for missing terms rather than invent an offer, personal endorsement or guaranteed outcome. Distinguish sponsored reads from independent comparisons.
 

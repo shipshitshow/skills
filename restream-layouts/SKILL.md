@@ -7,7 +7,7 @@ description: Plan and create Restream camera, discussion, screen-demo and partne
 
 ## Channel context
 
-Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
+Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
 For the bundled show, load the canonical kit's editing/broadcast rules and inventory linked in the profile. Keep the signature and partner strip modest. A flattened design board or JPG is not a transparent overlay or evidence of real Studio placement.
 

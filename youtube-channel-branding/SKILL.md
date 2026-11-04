@@ -7,7 +7,7 @@ description: Generate or brief a coordinated YouTube profile picture and banner 
 
 ## Channel context
 
-Use the user's channel profile and actual source asset. For Ship Sh!t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
+Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
 
 For the bundled show, read the canonical brand kit and inventory linked in the profile. The working logo and presentation boards have different statuses; do not mistake a board's cover/banner composition for a correctly sized, approved export.
 
