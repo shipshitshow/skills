@@ -7,7 +7,7 @@ description: Create exactly three YouTube thumbnail test concepts and generation
 
 ## Channel context
 
-Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner.
+Use the user's channel profile and actual source asset. For Ship Sh*t Show, read [the bundled profile](references/channel-profile.md); viewers using another channel should provide their audience, voice, formats, links and visual references. A profile is context, not permission to publish, upload footage, buy generation or contact a partner. For Ship Sh*t Show, also read [the approved Lab winners](references/approved-winners.md): the owner's recurring review notes, the 67 approved concepts by topic, and how their prompts are written.
 
 For the bundled show, read the canonical brand kit and inventory linked in the profile. Use its thumbnail rules and appropriate authorized assets; draft boards are composition references, not final artwork or new source photographs. Place the asterisk exactly as [the placement table](https://github.com/shipshitshow/vault/blob/master/brand/placement.md) says, from the same three SVG masters; never redraw it or pick a corner or size by eye.
 
