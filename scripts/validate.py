@@ -28,7 +28,7 @@ profile = (root / 'profiles/shipshitshow.md').read_text()
 for obsolete in ('**`SH*W`**', 'small upper-right', 'Ship Sh!t Show', 'black asterisk on red', 'x1136/y576', 'always **bottom-right**', '#FF2D20', '#ff2d20'):
     if obsolete in profile:
         errors.append(f'Canonical profile contains obsolete branding: {obsolete}')
-for required in ('Ship Sh*t Show', 'red asterisk on charcoal', 'six-arm asterisk', 'Think AI', '**top-right**', '#E83B3B', 'x1120/y64', 'x768/y320', '64px top/right', '320px top, 216px right', 'brand/placement.md', '7.5% of the frame width'):
+for required in ('Ship Sh*t Show', 'red asterisk on charcoal', 'six-arm asterisk', 'Think AI', '**top-right**', '#E83B3B', 'x1120/y64', 'x880/y230', '64px top/right', '230px top, 80px right', 'brand/placement.md', '7.5% of the frame width'):
     if required not in profile:
         errors.append(f'Canonical profile is missing the approved brand rule: {required}')
 if errors:
