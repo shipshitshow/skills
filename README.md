@@ -20,6 +20,7 @@ Install with your agent's skill installer from `shipshitshow/skills`, or copy th
 | `recap` | Focused edit, cuts and final-timeline packaging |
 | `dialogue` | Recording-specific audio treatment and review |
 | `overlays` | Asset-sheet illustrations, motion graphics and overlays on a plain recording |
+| `growth-review` | Episode performance against the channel's own history, with retention and lever review |
 | `coach` | One-page scorecard per host from a livestream transcript, with measured speech numbers |
 
 The four editing skills (`library`, `recap`, `dialogue`, `overlays`) are editor-neutral workflow rules. Each names its current editor, Tesseract, in a short closing section. They do not require a viewer to use Vincent's folders or copy the editor's changing API schema. A brief does not imply publication, paid generation, media upload or partner outreach.
