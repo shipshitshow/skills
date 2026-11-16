@@ -7,7 +7,7 @@ recording is stored once, and every deliverable cut from it is its own project.
 assets/                         shared licensed logos, host photos, music
 raw/                            inbox for footage not yet assigned to an episode
 _labs/<slug>/                   branding and motion experiments (projects)
-projects/<YYMMDD>/              one recorded episode, keyed by recording date
+projects/<YYYY-MM-DD>_<YYMMDD>/ one recorded episode, keyed by recording date
   episode.json                  episode identity, source and published IDs, links
   raw/                          original recording and raw transcript/captions
   video/                        long-form edit (recap) project
